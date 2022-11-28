@@ -1,0 +1,55 @@
+:root {
+    --main-color: rgb(106, 0, 255);
+    --btn-hover:rgb(181, 128, 255);
+}
+/* Modal */
+
+/* background */
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: auto;
+    background-color: rgba(53, 53, 53, 0.4);
+}
+
+/* Modal box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    width: 50%;
+    border-radius: 20px;
+}
+
+/* close button */
+.close {
+    color: rgb(175, 175, 175);
+    float: right;
+    font-size: 28px;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    cursor: pointer;
+}
+
+/* open app btn */
+.modal button {
+    width: 100px;
+    height: 40px;
+    background-color: #fff;
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.modal button:hover, .modal button:focus{
+    border: 1px solid var(--btn-hover);
+    color: var(--btn-hover);
+}

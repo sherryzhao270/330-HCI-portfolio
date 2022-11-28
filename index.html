@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="navigation.css">
-    <!-- <script src="main.js"></script> -->
+    <link rel="stylesheet" href="modal.css">
+    <script src="home.js"></script>
     <title>portfolio</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <!-- nav bar-->
     <nav role=nagivation class="top-nav">
         <ul>
@@ -28,26 +31,45 @@
     <!-- Showcase Projects -->
     <article>
         <!-- project 1 -->
-        <section>
-            <a href=""><div class="project-title"> 
-                <span class="project-logo"><img src="images/intune-logo.svg" alt="InTune logo failed to load."/></span>
-                <span class="project-name"><b>InTune</b></span> 
-            </div></a>
+        <section role="button" onclick="openModal('modal1')">
+            <div class="project-title">
+                <span class="project-logo"><img src="images/intune-logo.svg" alt="InTune logo failed to load." /></span>
+                <span class="project-name"><b>InTune</b></span>
+            </div>
         </section>
 
         <!-- project 2 -->
-        <section>
-            <a href="https://cs333-fianlproj-group1.herokuapp.com/"><div class="project-title"> 
-                <span class="project-logo"><img src="images/intune-logo.svg" alt="InTune logo failed to load."/></span>
-                <span class="project-name"><b>Election Data Visualization</b></span> 
-            </div></a>
+        <section role="button" onclick="openModal('modal2')">
+            <div class="project-title">
+                <span class="project-logo"><img src="images/icons8-visualization.png"
+                        alt="InTune logo failed to load." /></span>
+                <span class="project-name"><b>Election Data Visualization</b></span>
+            </div>
         </section>
 
+        <!-- project 1 detail -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal1')"><b>&times;</b></span>
+                <p>An music app that recommand songs by time and weather.</p>
+                <a href="http://www.responsinator.com/?url=intune-ab424.web.app%2F"><button> Open Project </button></a>
+            </div>
+        </div>
+
+        <!-- project 2 detail -->
+        <div id="modal2" class="modal" onclick="closeModal('modal2')">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>A visualization of the attitude of Republican candidates toward the 2020 election.</p>
+                <p><a href="https://github.com/fivethirtyeight/data/tree/master/election-deniers">View dataset</a></p>
+                <a href="https://cs333-fianlproj-group1.herokuapp.com/"><button> Open Project </button></a>
+            </div>
+        </div>
 
     </article>
 
 
-  </body>
+</body>
 
 
 </html>

@@ -16,6 +16,7 @@ article section {
     background-color: var(--proj-bg-color);
     border-radius: 10px;
     margin: 15px auto;
+    cursor: pointer;
 }
 
 article section:hover{

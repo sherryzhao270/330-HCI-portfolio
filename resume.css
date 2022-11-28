@@ -57,3 +57,12 @@ ul li {
 ul li b {
     color: black;
 }
+
+/* projects */
+.project-title {
+    margin-bottom: 0px
+}
+
+.project-description {
+    margin-top: 5px;
+}

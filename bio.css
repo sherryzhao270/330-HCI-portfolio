@@ -1,0 +1,46 @@
+:root {
+    --main-color: rgb(106, 0, 255);
+    --proj-bg-color: rgb(235 235 235);
+}
+
+article {
+    width: 800px;
+    margin: auto;
+    margin-top: 160px;
+    border: 1px solid var(--main-color);
+    border-radius: 20px;
+    padding: 20px 40px;
+}
+
+/* Bio Content */
+
+.intro-self {
+    column-count: 2;
+    margin: 20px;
+}
+
+.intro-self img {
+    float: right;
+    padding: 0px 80px;
+}
+
+.intro-self div {
+    float: left;
+    padding: 60px 0px;
+}
+
+.intro-major {
+    column-count: 2;
+    margin: 20px;
+}
+
+.intro-major img {
+    float: left;
+    width: 250px;
+    padding: 0px 0px 0px 80px;
+}
+
+.intro-major div {
+    float: left;
+    padding: 80px 0px 80px 30px;
+}

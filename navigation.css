@@ -2,6 +2,8 @@
     --main-bg-color: rgb(106, 0, 255);
   }
 
+/* Navigation */
+
 nav.top-nav {
     background-color: var(--main-bg-color);
     position: fixed;
@@ -35,6 +37,13 @@ nav.top-nav ul {
     list-style: none;
 }
 
+nav ul li a {
+    color:#fff;
+    text-decoration: none;
+}
+
+/* Pulldown Menu */ 
+
 nav.top-nav .pulldown-menu {
     display: none;
     position :absolute;
@@ -48,9 +57,4 @@ nav.top-nav .pulldown-menu li{
 
 nav.top-nav li:hover .pulldown-menu{
     display: block;
-}
-
-nav ul li a {
-    color:#fff;
-    text-decoration: none;
 }

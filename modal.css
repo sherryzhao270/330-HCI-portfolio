@@ -47,6 +47,7 @@
     color: var(--main-color);
     border-radius: 8px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 .modal button:hover, .modal button:focus{

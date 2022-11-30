@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="navigation.css">
     <link rel="stylesheet" href="modal.css">
-    <script src="home.js"></script>
+
     <title>portfolio</title>
 </head>
 
@@ -18,11 +18,11 @@
             <li tabindex=1><a href="resume.html">Resume</a></li>
             <li tabindex=2><a href="bio.html">Bio</a></li>
             <li tabindex=3>Contacts</li>
-            <li tabindex=4><a aria-haspopup="true" aria-expanded="false">Account</a>
+            <li tabindex=4><a id="account-name" aria-haspopup="true" aria-expanded="false">Account</a>
                 <ul class="pulldown-menu">
-                    <li>Login</li>
+                    <li onclick="openModal('login-modal')">Login</li>
                     <li>Logout</li>
-                    <li>Create Account</li>
+                    <li onclick="openModal('create-account-modal')">Create Account</li>
                 </ul>
             </li>
         </ul>
@@ -66,10 +66,43 @@
             </div>
         </div>
 
+        <!-- Create account model -->
+        <div id="create-account-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('create-account-modal')">&times;</span>
+                <div>Create Account</div>
+                <form onsubmit="handleCreateAccount">
+                    <div>
+                        <input name="username" placeholder="Username" required />
+                        <input type="password" name="password1" placeholder="Password" required />
+                        <input type="password" name="password2" placeholder="Confirm Password" required />
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+                <div id="create-account-error"></div>
+            </div>
+        </div>
+
+        <!-- login model -->
+        <div id="login-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('login-modal')">&times;</span>
+                <div>Login</div>
+                <form id="login-form" onsubmit="(e) => handleLogin(e)">
+                    <div>
+                        <input name="username" placeholder="Username" required />
+                        <input type="password" name="password1" placeholder="Password" required />
+                    </div>
+                    <button>Login</button>
+                </form>
+                <div id="login-error"></div>
+            </div>
+        </div>
+
     </article>
 
 
 </body>
-
+<script src="home.js"></script>
 
 </html>

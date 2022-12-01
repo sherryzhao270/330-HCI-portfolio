@@ -31,6 +31,7 @@ nav.top-nav li {
     user-select: none;
     color: #fff;
     cursor: pointer;
+    margin-right: 40px;
 }
 
 nav.top-nav ul {
@@ -42,6 +43,11 @@ nav ul li a {
     text-decoration: none;
 }
 
+#account {
+    float:right;
+    margin-right: 50px;
+}
+
 /* Pulldown Menu */ 
 
 nav.top-nav .pulldown-menu {
@@ -49,6 +55,7 @@ nav.top-nav .pulldown-menu {
     position :absolute;
     border: 1px solid white;
     background-color: var(--main-bg-color);
+    right: 0px;
 }
 
 nav.top-nav .pulldown-menu li{

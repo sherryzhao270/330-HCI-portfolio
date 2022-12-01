@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="userProfile.css">
+  <link rel="stylesheet" href="navigation.css">
+  <link rel="stylesheet" href="modal.css">
+  <title>portfolio</title>
+</head>
+
+<body>
+    <!-- nav bar-->
+  <nav role=nagivation class="top-nav">
+    <ul>
+      <li nav tabindex=0><a href="index.html">Projects</a></li>
+      <li tabindex=1><a href="resume.html">Resume</a></li>
+      <li tabindex=2><a href="bio.html">Bio</a></li>
+      <li tabindex=3>Contacts</li>
+      <li id="account" aria-current=page tabindex=4><a id="account-name" aria-haspopup="true" aria-expanded="false">Account</a>
+        <ul class="pulldown-menu">
+          <li id="nav-login" onclick="openModal('login-modal')">Login</li>
+          <li id="nav-profile">Profile</li>
+          <li id="nav-logout" onclick="handleLogout()">Logout</li>
+          <li id="nav-create-account" onclick="openModal('create-account-modal')">Create Account</li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  
+  <article>
+
+    <!-- Create account model -->
+    <div id="create-account-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('create-account-modal')">&times;</span>
+            <div>Create Account</div>
+            <form id="create-account-form">
+                <div>
+                    <input type="text" name="username" placeholder="Username" required />
+                    <input type="email" name="email" placeholder="Email" required />
+                    <input type="tel" name="phone" placeholder="Phone" required />
+                    <input type="password" name="password1" placeholder="Password" required />
+                    <input type="password" name="password2" placeholder="Confirm Password" required />
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="create-account-error"></div>
+        </div>
+    </div>
+
+    <!-- login model -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('login-modal')">&times;</span>
+            <div>Login</div>
+            <form id="login-form">
+                <div>
+                    <input type="email" name="email" placeholder="Email" required />
+                    <input type="password" name="password1" placeholder="Password" required />
+                </div>
+                <button>Login</button>
+            </form>
+            <div id="login-error"></div>
+        </div>
+    </div>
+  </article>
+
+</body>
+<script src="home.js"></script>
+
+</html>

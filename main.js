@@ -1,4 +1,3 @@
-
 var accounts = { "tianxizhao2024@u.northwestern.edu": { "username": "Sherry", "password": "sherry123", "email": "tianxizhao2024@u.northwestern.edu", "phone": "2167780457" } };
 var currentUser = localStorage;
 
@@ -69,6 +68,8 @@ const handleLogout = () => {
     currentUser = null;
     document.getElementById("account-name").innerHTML = 'Account';
     guestMenu();
+    let profile = document.getElementById("user-profile-content")
+    if (profile) {displayUserProfile()}
 }
 
 const loginForm = document.getElementById('login-form');

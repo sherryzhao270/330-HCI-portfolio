@@ -18,9 +18,10 @@
             <li tabindex=3>Contacts</li>
             <li tabindex=4><a id="account-name" aria-haspopup="true" aria-expanded="false">Account</a>
                 <ul class="pulldown-menu">
-                    <li onclick="openModal('login-modal')">Login</li>
-                    <li>Logout</li>
-                    <li onclick="openModal('create-account-modal')">Create Account</li>
+                    <li id="nav-login" onclick="openModal('login-modal')">Login</li>
+                    <li id="nav-profile">Profile</li>
+                    <li id="nav-logout" onclick="handleLogout()">Logout</li>
+                    <li id="nav-create-account" onclick="openModal('create-account-modal')">Create Account</li>
                 </ul>
             </li>
         </ul>

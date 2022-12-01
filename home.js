@@ -2,10 +2,6 @@
 var accounts = { "tianxizhao2024@u.northwestern.edu": { "username": "Sherry", "password": "sherry123", "email": "tianxizhao2024@u.northwestern.edu", "phone": "2167780457" } };
 var currentUser = localStorage;
 
-currentUser.length > 0
-    ? document.getElementById("account-name").innerHTML = currentUser.username
-    : document.getElementById("account-name").innerHTML = 'Account'
-
 /* Modal */
 const openModal = (id) => {
     let modal = document.getElementById(id);
@@ -17,6 +13,7 @@ const closeModal = (id) => {
     modal.style.display = "none";
 }
 
+/* Nav bar */
 /* Account */
 const handleCreateAccount = (e) => {
     e.preventDefault()
@@ -38,7 +35,8 @@ const handleCreateAccount = (e) => {
                 currentUser = { "username": username, "password": password1, "email": email, "phone": phone },
                 Object.keys(currentUser).map((key) => localStorage.setItem(key, currentUser[key])),
                 document.getElementById("account-name").innerHTML = username,
-                document.getElementById("create-account-error").innerHTML = "Account created")
+                document.getElementById("create-account-error").innerHTML = "Account created",
+                userMenu())
             // password not match, return error
             : document.getElementById("create-account-error").innerHTML = "Password not match"
 
@@ -57,7 +55,8 @@ const handleLogin = (e) => {
             ? (closeModal("login-modal"),
                 currentUser = accounts[email],
                 Object.keys(currentUser).map((key) => localStorage.setItem(key, currentUser[key])),
-                document.getElementById("account-name").innerHTML = currentUser.username)
+                document.getElementById("account-name").innerHTML = currentUser.username,
+                userMenu())
             // password not correct, return error
             : document.getElementById("login-error").innerHTML = "Incorrect username or password"
         // account exist, return error
@@ -69,6 +68,7 @@ const handleLogout = () => {
     Object.keys(currentUser).map((key) => localStorage.removeItem(key))
     currentUser = null;
     document.getElementById("account-name").innerHTML = 'Account';
+    guestMenu();
 }
 
 const loginForm = document.getElementById('login-form');
@@ -77,3 +77,21 @@ loginForm.addEventListener('submit', handleLogin);
 const createAccountForm = document.getElementById('create-account-form');
 createAccountForm.addEventListener('submit', handleCreateAccount);
 
+/* Pulldown Menu */
+const userMenu = () => {
+    document.getElementById("nav-login").style.display = "none";
+    document.getElementById("nav-profile").style.display = "block";
+    document.getElementById("nav-logout").style.display = "block";
+    document.getElementById("nav-create-account").style.display = "none";
+}
+
+const guestMenu = () => {
+    document.getElementById("nav-login").style.display = "block";
+    document.getElementById("nav-profile").style.display = "none";
+    document.getElementById("nav-logout").style.display = "none";
+    document.getElementById("nav-create-account").style.display = "block";
+}
+
+currentUser.length > 0
+    ? (document.getElementById("account-name").innerHTML = currentUser.username, userMenu())
+    : (document.getElementById("account-name").innerHTML = 'Account', guestMenu())

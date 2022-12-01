@@ -71,9 +71,11 @@
             <div class="modal-content">
                 <span class="close" onclick="closeModal('create-account-modal')">&times;</span>
                 <div>Create Account</div>
-                <form onsubmit="handleCreateAccount">
+                <form id="create-account-form">
                     <div>
+                        <input type="email" name="email" placeholder="Email" required />
                         <input name="username" placeholder="Username" required />
+                        <input type="phone" name="phone" placeholder="Phone" required />
                         <input type="password" name="password1" placeholder="Password" required />
                         <input type="password" name="password2" placeholder="Confirm Password" required />
                     </div>
@@ -88,9 +90,9 @@
             <div class="modal-content">
                 <span class="close" onclick="closeModal('login-modal')">&times;</span>
                 <div>Login</div>
-                <form id="login-form" onsubmit="(e) => handleLogin(e)">
+                <form id="login-form">
                     <div>
-                        <input name="username" placeholder="Username" required />
+                        <input type="email" name="email" placeholder="Email" required />
                         <input type="password" name="password1" placeholder="Password" required />
                     </div>
                     <button>Login</button>

@@ -1,0 +1,31 @@
+:root {
+    --main-color: rgb(106, 0, 255);
+}
+
+article {
+    width: 800px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+/* User profile */
+
+section {
+    column-count: 2;
+}
+
+.user-profile-image img{
+    float:right;
+    padding: 0px 20px;
+}
+
+#user-profile-content{
+    width: 100%;
+    float: left;
+    margin: 20px;
+    padding: 20px;
+}
+
+#user-profile-content div {
+    padding: 10px;
+}

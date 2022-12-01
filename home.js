@@ -1,11 +1,12 @@
 
-var accounts = {"tianxizhao2024@u.northwestern.edu": {"username": "Sherry", "password": "sherry123",  "phone": "2167780457"}};
-var currentUser = localStorage.getItem("userEmail") ? accounts[localStorage.getItem("userEmail")] : "";
+var accounts = { "tianxizhao2024@u.northwestern.edu": { "username": "Sherry", "password": "sherry123", "email": "tianxizhao2024@u.northwestern.edu", "phone": "2167780457" } };
+var currentUser = localStorage;
 
-currentUser
+currentUser.length > 0
     ? document.getElementById("account-name").innerHTML = currentUser.username
     : document.getElementById("account-name").innerHTML = 'Account'
 
+/* Modal */
 const openModal = (id) => {
     let modal = document.getElementById(id);
     modal.style.display = "block";
@@ -16,6 +17,7 @@ const closeModal = (id) => {
     modal.style.display = "none";
 }
 
+/* Account */
 const handleCreateAccount = (e) => {
     e.preventDefault()
 
@@ -31,10 +33,10 @@ const handleCreateAccount = (e) => {
         // account not exist
         : password1 === password2
             // password match, add to accounts
-            ? (accounts[email] = { "username": username, "password": password1, "phone": phone },
+            ? (accounts[email] = { "username": username, "password": password1, "email": email, "phone": phone },
                 closeModal("create-account-modal"),
-                localStorage.setItem("userEmail", email),
-                currentUser = { "username": username, "password": password1, "phone": phone },
+                currentUser = { "username": username, "password": password1, "email": email, "phone": phone },
+                Object.keys(currentUser).map((key) => localStorage.setItem(key, currentUser[key])),
                 document.getElementById("account-name").innerHTML = username,
                 document.getElementById("create-account-error").innerHTML = "Account created")
             // password not match, return error
@@ -53,8 +55,8 @@ const handleLogin = (e) => {
         ? accounts[email].password === password
             // password correct, login
             ? (closeModal("login-modal"),
-                localStorage.setItem("userEmail", email),
                 currentUser = accounts[email],
+                Object.keys(currentUser).map((key) => localStorage.setItem(key, currentUser[key])),
                 document.getElementById("account-name").innerHTML = currentUser.username)
             // password not correct, return error
             : document.getElementById("login-error").innerHTML = "Incorrect username or password"
@@ -64,14 +66,14 @@ const handleLogin = (e) => {
 }
 
 const handleLogout = () => {
-    localStorage.removeItem("userEmail");
-    currentUser = localStorage.getItem("userEmail");
+    Object.keys(currentUser).map((key) => localStorage.removeItem(key))
+    currentUser = null;
     document.getElementById("account-name").innerHTML = 'Account';
 }
 
 const loginForm = document.getElementById('login-form');
 loginForm.addEventListener('submit', handleLogin);
 
-// const createAccountForm = document.getElementById('login-form');
-// createAccountForm.addEventListener('submit', handleLogin);
+const createAccountForm = document.getElementById('create-account-form');
+createAccountForm.addEventListener('submit', handleCreateAccount);
 

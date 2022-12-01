@@ -21,7 +21,7 @@
             <li tabindex=4><a id="account-name" aria-haspopup="true" aria-expanded="false">Account</a>
                 <ul class="pulldown-menu">
                     <li onclick="openModal('login-modal')">Login</li>
-                    <li>Logout</li>
+                    <li onclick="handleLogout()">Logout</li>
                     <li onclick="openModal('create-account-modal')">Create Account</li>
                 </ul>
             </li>
@@ -73,9 +73,9 @@
                 <div>Create Account</div>
                 <form id="create-account-form">
                     <div>
+                        <input type="text" name="username" placeholder="Username" required />
                         <input type="email" name="email" placeholder="Email" required />
-                        <input name="username" placeholder="Username" required />
-                        <input type="phone" name="phone" placeholder="Phone" required />
+                        <input type="tel" name="phone" placeholder="Phone" required />
                         <input type="password" name="password1" placeholder="Password" required />
                         <input type="password" name="password2" placeholder="Confirm Password" required />
                     </div>

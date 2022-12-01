@@ -29,6 +29,10 @@ table {
     width: 30%;
 }
 
+.contact a{
+    text-decoration: none;
+}
+
 .contact div {
     width: 320px;
     float: right;

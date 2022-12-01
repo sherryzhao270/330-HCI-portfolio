@@ -29,3 +29,7 @@ section {
 #user-profile-content div {
     padding: 10px;
 }
+
+#user-profile-content a{
+    text-decoration: none;
+}

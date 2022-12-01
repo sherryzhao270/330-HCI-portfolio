@@ -54,3 +54,10 @@
     border: 1px solid var(--btn-hover);
     color: var(--btn-hover);
 }
+
+/* User profile */
+.modal input {
+    width: 80%;
+    padding: 8px;
+    margin: 5px auto;
+}

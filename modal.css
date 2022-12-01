@@ -26,6 +26,23 @@
     border-radius: 20px;
 }
 
+.modal-content div {
+    width: 90%;
+    margin: 5px auto;
+    font-weight: bold;
+
+}
+
+.modal-content form {
+    width: 90%;
+    margin:auto
+}
+
+.modal-content form div{
+    margin: 0px;
+    width: 100%;
+}
+
 /* close button */
 .close {
     color: rgb(175, 175, 175);
@@ -59,5 +76,5 @@
 .modal input {
     width: 80%;
     padding: 8px;
-    margin: 5px auto;
+    margin: 5px 0px;
 }

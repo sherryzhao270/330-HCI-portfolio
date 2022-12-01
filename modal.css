@@ -43,6 +43,10 @@
     width: 100%;
 }
 
+.modal-content ul li {
+    text-align: justify !important;
+}
+
 /* close button */
 .close {
     color: rgb(175, 175, 175);

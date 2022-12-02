@@ -82,3 +82,13 @@
     padding: 8px;
     margin: 5px 0px;
 }
+
+#select-account-type input{
+    width: 10px;
+    margin: 5px;
+}
+
+#select-account-type label {
+    margin-right: 20px;
+    font-weight: 400;
+}

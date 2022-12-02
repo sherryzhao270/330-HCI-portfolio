@@ -116,6 +116,13 @@
                         <input type="tel" name="phone" placeholder="Phone" required />
                         <input type="password" name="password1" placeholder="Password" required />
                         <input type="password" name="password2" placeholder="Confirm Password" required />
+                        <div id="select-account-type">
+                            <label for="html">Account type:</label>
+                            <input type="radio" id="basic" name="selected-account-type" value="basic">
+                            <label for="basic">Basic</label>
+                            <input type="radio" id="advanced" name="selected-account-type" value="advanced">
+                            <label for="advanced">Advanced</label>
+                        </div>
                     </div>
                     <button type="submit">Submit</button>
                 </form>
@@ -142,5 +149,7 @@
     </article>
 </body>
 <script src="main.js"></script>
+<script src="project.js"></script>
+<script src="userProfile.js"></script>
 
 </html>

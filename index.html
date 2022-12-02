@@ -63,18 +63,21 @@
                 <h3>Electioin Data Visualization Project Detail</h3>
                 <p>A visualization of the attitude of Republican candidates toward the 2020 election.</p>
                 <p>
-                    <h4>Domain Tasks</h4>
-                    <ul>
-                        <li>Revealing how many (large amount) Republican candidates have not fully accepted the result of the 2020 election.</li>
-                        <li>Reveal that candidates’ stance varies a lot in different states. </li>
-                    </ul>
+                <h4>Domain Tasks</h4>
+                <ul>
+                    <li>Revealing how many (large amount) Republican candidates have not fully accepted the result of
+                        the 2020 election.</li>
+                    <li>Reveal that candidates’ stance varies a lot in different states. </li>
+                </ul>
                 </p>
                 <p>
-                    <h4>Visual Encodeing</h4>
-                    <ul>
-                        <li><b>Storytelling</b>: use dynamic effects to delete data that we do not want to display. Use different colored squares to express the voters' attitudes.</li>
-                        <li><b>Bar Chart</b>: make the unselected data virtualized so that audiences can focus more on the data they are interested in.</li>
-                    </ul>
+                <h4>Visual Encodeing</h4>
+                <ul>
+                    <li><b>Storytelling</b>: use dynamic effects to delete data that we do not want to display. Use
+                        different colored squares to express the voters' attitudes.</li>
+                    <li><b>Bar Chart</b>: make the unselected data virtualized so that audiences can focus more on the
+                        data they are interested in.</li>
+                </ul>
                 </p>
                 <p><a href="https://github.com/fivethirtyeight/data/tree/master/election-deniers">View dataset</a></p>
             </div>
@@ -92,6 +95,13 @@
                         <input type="tel" name="phone" placeholder="Phone" required />
                         <input type="password" name="password1" placeholder="Password" required />
                         <input type="password" name="password2" placeholder="Confirm Password" required />
+                        <div id="select-account-type">
+                            <label for="html">Account type:</label>
+                            <input type="radio" id="basic" name="selected-account-type" value="basic">
+                            <label for="basic">Basic</label>
+                            <input type="radio" id="advanced" name="selected-account-type" value="advanced">
+                            <label for="advanced">Advanced</label>
+                        </div>
                     </div>
                     <button type="submit">Submit</button>
                 </form>

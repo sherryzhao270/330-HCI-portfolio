@@ -22,7 +22,8 @@ const handleCreateAccount = (e) => {
         email = e.target[1].value,
         phone = e.target[2].value,
         password1 = e.target[3].value,
-        password2 = e.target[4].value
+        password2 = e.target[4].value,
+        accountType = Array.from(document.getElementsByName("selected-account-type")).filter(ele => ele.checked)[0].value
 
     email in accounts
         // account already exist, return error
@@ -30,15 +31,15 @@ const handleCreateAccount = (e) => {
         // account not exist
         : password1 === password2
             // password match, add to accounts
-            ? (accounts[email] = { "username": username, "password": password1, "identity":"user", "email": email, "phone": phone },
+            ? (accounts[email] = { "username": username, "password": password1, "accountType":accountType, "email": email, "phone": phone },
                 closeModal("create-account-modal"),
-                currentUser = { "username": username, "password": password1, "identity":"user", "email": email, "phone": phone },
+                currentUser = { "username": username, "password": password1, "accountType":accountType, "email": email, "phone": phone },
                 Object.keys(currentUser).map((key) => localStorage.setItem(key, currentUser[key])),
                 document.getElementById("account-name").innerHTML = username,
                 document.getElementById("create-account-error").innerHTML = "Account created",
                 userMenu(),
                 displayUserProfile(),
-                projectButton)
+                projectButton())
             // password not match, return error
             : document.getElementById("create-account-error").innerHTML = "Password not match"
 
@@ -74,7 +75,7 @@ const handleLogout = () => {
     document.getElementById("account-name").innerHTML = 'Account';
     guestMenu();
     displayUserProfile();
-    projectButton;
+    projectButton();
 }
 
 const loginForm = document.getElementById('login-form');

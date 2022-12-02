@@ -2,9 +2,9 @@ var currentUser = localStorage
 
 const displayUserProfile = () => {
     let profile = document.getElementById("user-profile-content")
-    
+
     if (profile) {
-        currentUser
+        profile && currentUser && currentUser.length > 0
             ? profile.innerHTML = `<div> Username: ${currentUser.username} </div>
                             <div> Email: <a href="mailto:${currentUser.email}">${currentUser.email}</a> </div>
                             <div> Phone: <a href="tel:${currentUser.phone}">${currentUser.phone}</a> </div>
@@ -25,7 +25,6 @@ displayUserProfile()
 
 let infoIcon = document.getElementById("info-icon");
 if (infoIcon) {
-    let infoContent = document.getElementById("info-content");
     infoIcon.addEventListener("mouseover", displayInfo);
     infoIcon.addEventListener("mouseout", hideInfo);
 }

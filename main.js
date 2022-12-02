@@ -37,7 +37,8 @@ const handleCreateAccount = (e) => {
                 document.getElementById("account-name").innerHTML = username,
                 document.getElementById("create-account-error").innerHTML = "Account created",
                 userMenu(),
-                displayUserProfile())
+                displayUserProfile(),
+                projectButton)
             // password not match, return error
             : document.getElementById("create-account-error").innerHTML = "Password not match"
 
@@ -58,7 +59,8 @@ const handleLogin = (e) => {
                 Object.keys(currentUser).map((key) => localStorage.setItem(key, currentUser[key])),
                 document.getElementById("account-name").innerHTML = currentUser.username,
                 userMenu(),
-                displayUserProfile())
+                displayUserProfile(),
+                projectButton())
             // password not correct, return error
             : document.getElementById("login-error").innerHTML = "Incorrect username or password"
         // account exist, return error
@@ -72,6 +74,7 @@ const handleLogout = () => {
     document.getElementById("account-name").innerHTML = 'Account';
     guestMenu();
     displayUserProfile();
+    projectButton;
 }
 
 const loginForm = document.getElementById('login-form');

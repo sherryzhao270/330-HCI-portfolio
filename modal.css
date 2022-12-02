@@ -92,3 +92,8 @@
     margin-right: 20px;
     font-weight: 400;
 }
+
+/* Error message */
+#login-error, #create-account-error {
+    color: red
+}

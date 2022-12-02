@@ -22,8 +22,8 @@ section {
 #user-profile-content{
     width: 100%;
     float: left;
-    margin: 20px;
-    padding: 20px;
+    margin: 10px;
+    padding: 10px;
 }
 
 #user-profile-content div {
@@ -34,18 +34,27 @@ section {
     text-decoration: none;
 }
 
-#user-profile-content button {
-    width: 100px;
-    height: 40px;
-    background-color: #fff;
-    border: 1px solid var(--main-color);
-    color: var(--main-color);
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 10px;
+
+/* Info icon */
+
+#info-icon {
+    font-size: 16px;
+    position: relative;
+    top: 3px;
+    color: rgb(48 48 255);
 }
 
-#user-profile-content button:hover, #user-profile-content button:focus{
-    border: 1px solid var(--btn-hover);
-    color: var(--btn-hover);
+#info-icon:hover,  #info-icon:focus{
+    color: rgb(126, 126, 255);
+}
+
+#info-content {
+    display: none;
+    position: absolute;
+    width: 200px;
+    text-align: justify;
+    background-color: rgb(237, 237, 237);
+    border-radius: 10px;
+    margin:auto;
+    
 }

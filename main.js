@@ -1,5 +1,5 @@
-var accounts = { "tianxizhao2024@u.northwestern.edu": { "username": "Sherry", "password": "sherry123", "identity":"user", "email": "tianxizhao2024@u.northwestern.edu", "phone": "2167780457" },
-                "admin@gmail.com": { "username": "Admin", "password": "admin123", "identity":"admin", "email": "admin@gmail.com", "phone": "0123456789" }  };
+var accounts = { "tianxizhao2024@u.northwestern.edu": { "username": "Sherry", "password": "sherry123", "accountType":"basic", "email": "tianxizhao2024@u.northwestern.edu", "phone": "2167780457" },
+                "admin@gmail.com": { "username": "Admin", "password": "admin123", "accountType":"advanced", "email": "admin@gmail.com", "phone": "0123456789" }  };
 var currentUser = localStorage;
 
 /* Modal */

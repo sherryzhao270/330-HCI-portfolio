@@ -33,3 +33,19 @@ section {
 #user-profile-content a{
     text-decoration: none;
 }
+
+#user-profile-content button {
+    width: 100px;
+    height: 40px;
+    background-color: #fff;
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#user-profile-content button:hover, #user-profile-content button:focus{
+    border: 1px solid var(--btn-hover);
+    color: var(--btn-hover);
+}

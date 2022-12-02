@@ -1,4 +1,5 @@
-var accounts = { "tianxizhao2024@u.northwestern.edu": { "username": "Sherry", "password": "sherry123", "email": "tianxizhao2024@u.northwestern.edu", "phone": "2167780457" } };
+var accounts = { "tianxizhao2024@u.northwestern.edu": { "username": "Sherry", "password": "sherry123", "identity":"user", "email": "tianxizhao2024@u.northwestern.edu", "phone": "2167780457" },
+                "admin@gmail.com": { "username": "Admin", "password": "admin123", "identity":"admin", "email": "admin@gmail.com", "phone": "0123456789" }  };
 var currentUser = localStorage;
 
 /* Modal */
@@ -29,13 +30,14 @@ const handleCreateAccount = (e) => {
         // account not exist
         : password1 === password2
             // password match, add to accounts
-            ? (accounts[email] = { "username": username, "password": password1, "email": email, "phone": phone },
+            ? (accounts[email] = { "username": username, "password": password1, "identity":"user", "email": email, "phone": phone },
                 closeModal("create-account-modal"),
-                currentUser = { "username": username, "password": password1, "email": email, "phone": phone },
+                currentUser = { "username": username, "password": password1, "identity":"user", "email": email, "phone": phone },
                 Object.keys(currentUser).map((key) => localStorage.setItem(key, currentUser[key])),
                 document.getElementById("account-name").innerHTML = username,
                 document.getElementById("create-account-error").innerHTML = "Account created",
-                userMenu())
+                userMenu(),
+                displayUserProfile())
             // password not match, return error
             : document.getElementById("create-account-error").innerHTML = "Password not match"
 
@@ -55,7 +57,8 @@ const handleLogin = (e) => {
                 currentUser = accounts[email],
                 Object.keys(currentUser).map((key) => localStorage.setItem(key, currentUser[key])),
                 document.getElementById("account-name").innerHTML = currentUser.username,
-                userMenu())
+                userMenu(),
+                displayUserProfile())
             // password not correct, return error
             : document.getElementById("login-error").innerHTML = "Incorrect username or password"
         // account exist, return error
@@ -68,8 +71,7 @@ const handleLogout = () => {
     currentUser = null;
     document.getElementById("account-name").innerHTML = 'Account';
     guestMenu();
-    let profile = document.getElementById("user-profile-content")
-    if (profile) {displayUserProfile()}
+    displayUserProfile();
 }
 
 const loginForm = document.getElementById('login-form');

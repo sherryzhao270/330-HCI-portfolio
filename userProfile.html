@@ -13,13 +13,12 @@
 
 <body>
     <!-- nav bar-->
-    <nav role=nagivation class="top-nav">
+    <nav role=nagivation class="top-nav" tabindex="0">
         <ul>
-            <li nav tabindex=0><a href="index.html">Projects</a></li>
-            <li tabindex=1><a href="resume.html">Resume</a></li>
-            <li tabindex=2><a href="bio.html">Bio</a></li>
-            <li id="account" aria-current=page tabindex=4><a id="account-name" aria-haspopup="true"
-                    aria-expanded="false">Account</a>
+            <li nav><a href="index.html" tabindex="1">Projects</a></li>
+            <li><a href="resume.html" tabindex="2">Resume</a></li>
+            <li><a href="bio.html" tabindex="3">Bio</a></li>
+            <li aria-current=page tabindex="4" id="account"><a id="account-name" aria-haspopup="true" aria-expanded="false">Account</a>
                 <ul class="pulldown-menu">
                     <li id="nav-login" onclick="openModal('login-modal')">Login</li>
                     <li id="nav-profile"><a href="userProfile.html">Profile</a></li>
@@ -44,7 +43,7 @@
         <!-- Create account model -->
         <div id="create-account-modal" class="modal">
             <div class="modal-content">
-                <span class="close" onclick="closeModal('create-account-modal')">&times;</span>
+                <span class="close" role="button" tabindex="8" onclick="closeModal('create-account-modal')">&times;</span>
                 <div>Create Account</div>
                 <form id="create-account-form">
                     <div>
@@ -70,7 +69,7 @@
         <!-- login model -->
         <div id="login-modal" class="modal">
             <div class="modal-content">
-                <span class="close" onclick="closeModal('login-modal')">&times;</span>
+                <span class="close" role="button" tabindex="8" onclick="closeModal('login-modal')">&times;</span>
                 <div>Login</div>
                 <form id="login-form">
                     <div>

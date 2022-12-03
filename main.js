@@ -1,5 +1,7 @@
-var accounts = { "tianxizhao2024@u.northwestern.edu": { "username": "Sherry", "password": "sherry123", "accountType":"basic", "email": "tianxizhao2024@u.northwestern.edu", "phone": "2167780457" },
-                "admin@gmail.com": { "username": "Admin", "password": "admin123", "accountType":"advanced", "email": "admin@gmail.com", "phone": "0123456789" }  };
+var accounts = {
+    "tianxizhao2024@u.northwestern.edu": { "username": "Sherry", "password": "sherry123", "accountType": "basic", "email": "tianxizhao2024@u.northwestern.edu", "phone": "2167780457" },
+    "admin@gmail.com": { "username": "Admin", "password": "admin123", "accountType": "advanced", "email": "admin@gmail.com", "phone": "0123456789" }
+};
 var currentUser = localStorage;
 
 /* Modal */
@@ -31,9 +33,9 @@ const handleCreateAccount = (e) => {
         // account not exist
         : password1 === password2
             // password match, add to accounts
-            ? (accounts[email] = { "username": username, "password": password1, "accountType":accountType, "email": email, "phone": phone },
+            ? (accounts[email] = { "username": username, "password": password1, "accountType": accountType, "email": email, "phone": phone },
                 closeModal("create-account-modal"),
-                currentUser = { "username": username, "password": password1, "accountType":accountType, "email": email, "phone": phone },
+                currentUser = { "username": username, "password": password1, "accountType": accountType, "email": email, "phone": phone },
                 Object.keys(currentUser).map((key) => localStorage.setItem(key, currentUser[key])),
                 document.getElementById("account-name").innerHTML = username,
                 document.getElementById("create-account-error").innerHTML = "Account created",
@@ -102,3 +104,12 @@ const guestMenu = () => {
 currentUser.length > 0
     ? (document.getElementById("account-name").innerHTML = currentUser.username, userMenu())
     : (document.getElementById("account-name").innerHTML = 'Account', guestMenu())
+
+document.querySelectorAll('[role="button"]').forEach(function (ele) {
+    ele.addEventListener("keypress", (event) => {
+        console.log(event.key)
+        if (event.key === "Enter") {
+            ele.click()
+        }
+    })
+});

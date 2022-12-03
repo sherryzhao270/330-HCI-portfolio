@@ -12,14 +12,14 @@
 
 <body>
     <!-- nav bar-->
-    <nav role=nagivation class="top-nav">
+    <nav role=nagivation class="top-nav" tabindex="0">
         <ul>
-            <li nav aria-current=page tabindex=0><a href="index.html">Projects</a></li>
-            <li tabindex=1><a href="resume.html">Resume</a></li>
-            <li tabindex=2><a href="bio.html">Bio</a></li>
-            <li id="account" tabindex=4><a id="account-name" aria-haspopup="true" aria-expanded="false">Account</a>
+            <li nav aria-current=page><a href="index.html" tabindex="1">Projects</a></li>
+            <li><a href="resume.html" tabindex="2">Resume</a></li>
+            <li><a href="bio.html" tabindex="3">Bio</a></li>
+            <li id="account" tabindex="4" ><a id="account-name" aria-haspopup="true" aria-expanded="false">Account</a>
                 <ul class="pulldown-menu">
-                    <li id="nav-login" onclick="openModal('login-modal')">Login</li>
+                    <li id="nav-login" onclick="openModal('login-modal')" >Login</li>
                     <li id="nav-profile"><a href="userProfile.html">Profile</a></li>
                     <li id="nav-logout" onclick="handleLogout()">Logout</li>
                     <li id="nav-create-account" onclick="openModal('create-account-modal')">Create Account</li>
@@ -31,7 +31,7 @@
     <!-- Showcase Projects -->
     <article>
         <!-- project 1 -->
-        <section role="button" onclick="openModal('modal1')">
+        <section role="button" onclick="openModal('modal1')" tabindex="5">
             <div class="project-title">
                 <span class="project-logo"><img src="images/intune-logo.svg" alt="InTune logo failed to load." /></span>
                 <span class="project-name"><b>InTune</b></span>
@@ -39,7 +39,7 @@
         </section>
 
         <!-- project 2 -->
-        <section role="button" onclick="openModal('modal2')">
+        <section role="button" onclick="openModal('modal2')" tabindex="8">
             <div class="project-title">
                 <span class="project-logo"><img src="images/icons8-visualization.png"
                         alt="InTune logo failed to load." /></span>
@@ -48,9 +48,9 @@
         </section>
 
         <!-- project 1 detail -->
-        <div id="modal1" class="modal">
+        <div id="modal1" class="modal" aria-modal="true">
             <div class="modal-content project-detail">
-                <span class="close" onclick="closeModal('modal1')"><b>&times;</b></span>
+                <span class="close" tabindex="7" role="button" onclick="closeModal('modal1')" tabindex="1"><b>&times;</b></span>
                 <h3>InTune Project Detail</h3>
                 <p>An music app that recommand songs from Spotify playlists by current time and weather.</p>
                 <p id="project1-btn"></p>
@@ -60,7 +60,7 @@
         <!-- project 2 detail -->
         <div id="modal2" class="modal">
             <div class="modal-content project-detail">
-                <span class="close" onclick="closeModal('modal2')">&times;</span>
+                <span class="close" tabindex="11" role="button" onclick="closeModal('modal2')" tabindex="1">&times;</span>
                 <h3>Electioin Data Visualization Project Detail</h3>
                 <p>A visualization of the attitude of Republican candidates toward the 2020 election.</p>
                 <p>
@@ -80,7 +80,7 @@
                         data they are interested in.</li>
                 </ul>
                 </p>
-                <p><a href="https://github.com/fivethirtyeight/data/tree/master/election-deniers">View dataset</a></p>
+                <p><a href="https://github.com/fivethirtyeight/data/tree/master/election-deniers" tabindex="9">View dataset</a></p>
                 <p id="project2-btn"></p>
             </div>
         </div>
@@ -88,7 +88,7 @@
         <!-- Create account model -->
         <div id="create-account-modal" class="modal">
             <div class="modal-content">
-                <span class="close" onclick="closeModal('create-account-modal')">&times;</span>
+                <span class="close" role="button" tabindex="8" onclick="closeModal('create-account-modal')">&times;</span>
                 <div>Create Account</div>
                 <form id="create-account-form">
                     <div>
@@ -114,7 +114,7 @@
         <!-- login model -->
         <div id="login-modal" class="modal">
             <div class="modal-content">
-                <span class="close" onclick="closeModal('login-modal')">&times;</span>
+                <span class="close" role="button" tabindex="8" onclick="closeModal('login-modal')">&times;</span>
                 <div>Login</div>
                 <form id="login-form">
                     <div>

@@ -62,6 +62,6 @@ nav.top-nav .pulldown-menu li{
     display:block;
 }
 
-nav.top-nav li:hover .pulldown-menu{
+nav.top-nav li:hover .pulldown-menu, nav.top-nav li:focus .pulldown-menu{
     display: block;
 }
